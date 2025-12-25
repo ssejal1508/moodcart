@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MoodCartApplication",
+            "request": "launch",
+            "mainClass": "com.moodcart.MoodCartApplication",
+            "projectName": "moodcart",
+            "javaExec": "C:\\Program Files\\Java\\jdk-21\\bin\\java.exe"
+        }
+    ]
+}
