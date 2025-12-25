@@ -29,6 +29,8 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
+                // Static assets served from classpath:/static
+                .requestMatchers("/", "/index.html", "/favicon.ico", "/styles.css", "/app.js").permitAll()
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/moods/**").permitAll()
                 .requestMatchers("/api/products/trending").permitAll()
