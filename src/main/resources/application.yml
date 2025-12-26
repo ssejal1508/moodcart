@@ -28,7 +28,7 @@ spring:
     type: simple  
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 jwt:
   secret: moodcart-super-secret-key-change-in-production-minimum-256-bits-required-for-hs256
