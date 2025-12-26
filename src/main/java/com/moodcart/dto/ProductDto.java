@@ -10,6 +10,9 @@ import java.time.LocalDateTime;
 @Data
 public class ProductDto {
     private Long id;
+
+    // For external (e.g., eBay) products that are not yet persisted
+    private String externalId;
     
     @NotBlank(message = "Title is required")
     private String title;

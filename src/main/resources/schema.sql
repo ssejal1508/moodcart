@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS moods (
 -- Products table
 CREATE TABLE IF NOT EXISTS products (
     id BIGSERIAL PRIMARY KEY,
+    external_id VARCHAR(128) UNIQUE,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     image_url VARCHAR(500) NOT NULL,

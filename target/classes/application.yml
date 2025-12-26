@@ -17,7 +17,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
   
-  # Disable Redis
+ 
   data:
     redis:
       host: localhost
@@ -25,7 +25,7 @@ spring:
       timeout: 60000
   
   cache:
-    type: simple  # Use simple in-memory cache instead of Redis
+    type: simple  
 
 server:
   port: 8080
@@ -39,3 +39,8 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+ebay:
+  base-url: https://api.ebay.com/buy/browse/v1
+  oauth-token: "v^1.1#i^1#r^0#I^3#f^0#p^1#t^H4sIAAAAAAAA/+VYXWwUVRTutttKpVT8CSgBXYYCxmZmZ2Y7+zNhN2y3hW6l3dJdkEVIvTNzpzvt7Mwwd7ZlfdBasULUKIYHNFH7pCIgUUBMICYWMQbifzCQQKJgBCFBAiH6gMY7u6VsKwGkS2zivEzm3HPPPec7v3PpvorKRwaaBn6f4rijdLCP7it1OJjJdGVFeW11WemM8hK6gMEx2FfT5+wvO70AgbRq8O0QGbqGoGttWtUQnyMGiYyp8TpACuI1kIaIt0Q+Hm5ZwrMUzRumbumirhKuaEOQgLTsrQvIQsBDi6JfEjFVuyIzoQeJOr8AZQFzcQEZyEwAryOUgVENWUCzggRLsxzJsCTrTTAczzK8x095PP6VhGs5NJGia5iFoolQTl0+t9cs0PX6qgKEoGlhIUQoGl4Uj4WjDY2tiQXuAlmhYRziFrAyaPRXRJegazlQM/D6x6AcNx/PiCJEiHCH8ieMFsqHryhzC+rnofYA2sP4A/iRIS14iwLlIt1MA+v6etgURSLlHCsPNUuxsjdCFKMhdEHRGv5qxSKiDS77tTQDVEVWoBkkGuvDyXBbGxGKwy6gxlOATOu6JALTItvaG0hY52XrGMZbRwIOekWPHBg+KC9tGOYxJ0V0TVJs0JCrVbfqIdYajsWGKcAGM8W0mBmWLVujQj7fFQxZz0rbqXkvZqyUZvsVpjEQrtznjT0wstuyTEXIWHBEwtiFHERBAhiGIhFjF3OxOBw+a1GQSFmWwbvdvb29VK+H0s1ON0vTjHtFy5K4mIJpQGBeO9fz/MqNN5BKzhQR4p1I4a2sgXVZi2MVK6B1EiGOowN+bhj30WqFxlL/QSiw2T06I4qVIR4APKyf9cpAEFifJBcjQ0LDQeq29YACyJJpYHZDy1CBCEkRx1kmDU1F4j2czHr8MiQlb0AmcU2USYGTvCQjQ0hDKAhiwP9/SpSbDfU4FE1oFSXWixbn/mRzU6Q+VtvT2a2zenfTMuAzE1CrbTHXtGW1xIpkIBFZHGtiGpONwZvNhmsaH1EVjEwCn18MAOxcLx4ITTqyoDQu8+KibsA2XVXE7MRysMeU2nD2ZONQVTFhXEaGDSNanFpdNPP+ZZm4NbuL16P+o/50TauQHbITyyp7P8ICgKFQdgeiRD3ttnNdB3j8sMkdOa1d12Qcw+TGNNywREjhviQJQOymTAgkXVOz48JNwZPvhEIN25kHQZHyIyuVQ4JCPSK2GOkZjAGiYvYEl9C7oYb7oWXqqgrN5cy460E6nbGAoMKJVhiKkCAKmGDNmvF5vT5c2UbGq1uzS8y14o6JVtLsUu7sd9z+ct4OgZqeWLYbpi5lRHtGvQ2/HO7RFyChktzD9DuG6H7HJ6UOB72AnsvMoWdXlC1zllXNQIoFKQXIFFI6Nfxfb0KqG2YNoJil95YcPHy09cG9ze9u+Hl633M17ldLqgvuXwZX0/eP3MBUljGTC65j6JlXV8qZu6ZPYTmGZb0MxzJ46qbnXF11MtOc9+36dH1s6/bNVVv6P1hsnOx4/tt2tZmeMsLkcJSX4GApqfeWrn5hqFzcPo84u/LkhvPrHlq9sGZNFTo9mZtD1sWSsy7uePH9c18/PePR6EvrtrZMf2zgUnXDM5dPle/+fP3d+4918dwr70gNF3480HBk208bT68pg0u7DysD8OUa7vyu1InFsyo2uX/gGN/uqm9+nbZ56I2Dh2Q5cmbHvuOpzJN75r+3f+/Hn+28/HDttKF9b11qn7nq4rHkvDNDNd/1EgciT72WDPd9ubm2Lf7L0Z5NqWbpVAt957OvTzr31eNfTBo0uz6cP9jvG6g51BF1Hs9uW3Wgx/dm6q+p0pbv/zj/wJ7ynQK7/ewTGy9Ys/+cSlcSs5zkcW+kuuLIR5sWJgO/9d4Tdc9923kim/fl335mYzsZEwAA"
+  marketplace-id: EBAY_US

@@ -1,6 +1,7 @@
 package com.moodcart.controller;
 
 import com.moodcart.dto.FeedResponseDto;
+import com.moodcart.dto.ProductRefDto;
 import com.moodcart.dto.SaveProductDto;
 import com.moodcart.service.FeedService;
 import com.moodcart.service.ProductService;
@@ -46,12 +47,52 @@ public class ProductController {
         productService.unlikeProduct(id);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/like")
+    @SecurityRequirement(name = "Bearer Authentication")
+    @Operation(summary = "Like a product (supports external products)")
+    public ResponseEntity<Void> likeProductExternal(@Valid @RequestBody ProductRefDto dto) {
+        productService.likeProduct(dto);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/unlike")
+    @SecurityRequirement(name = "Bearer Authentication")
+    @Operation(summary = "Unlike a product (supports external products)")
+    public ResponseEntity<Void> unlikeProductExternal(@Valid @RequestBody ProductRefDto dto) {
+        productService.unlikeProduct(dto);
+        return ResponseEntity.ok().build();
+    }
     
     @PostMapping("/save")
     @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Save product to mood board")
     public ResponseEntity<Void> saveProduct(@Valid @RequestBody SaveProductDto dto) {
         feedService.saveProductToBoard(dto);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}/save")
+    @SecurityRequirement(name = "Bearer Authentication")
+    @Operation(summary = "Unsave product from mood board")
+    public ResponseEntity<Void> unsaveProduct(@PathVariable Long id) {
+        feedService.unsaveProductFromBoard(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/save-external")
+    @SecurityRequirement(name = "Bearer Authentication")
+    @Operation(summary = "Save product to mood board (supports external products)")
+    public ResponseEntity<Void> saveProductExternal(@Valid @RequestBody ProductRefDto dto) {
+        feedService.saveProductToBoard(dto);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/unsave")
+    @SecurityRequirement(name = "Bearer Authentication")
+    @Operation(summary = "Unsave product from mood board (supports external products)")
+    public ResponseEntity<Void> unsaveProductExternal(@Valid @RequestBody ProductRefDto dto) {
+        feedService.unsaveProductFromBoard(dto);
         return ResponseEntity.ok().build();
     }
     

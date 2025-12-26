@@ -2,6 +2,7 @@ package com.moodcart.config;
 
 import com.moodcart.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -29,8 +30,23 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
+                // Spring Boot static resources (classpath:/static, /public, /resources, /META-INF/resources)
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 // Static assets served from classpath:/static
-                .requestMatchers("/", "/index.html", "/favicon.ico", "/styles.css", "/app.js").permitAll()
+                .requestMatchers(
+                    "/",
+                    "/index.html",
+                    "/feed.html",
+                    "/saved.html",
+                    "/auth.html",
+                    "/favicon.ico",
+                    "/ui.css",
+                    "/ui.js",
+                    "/styles.css",
+                    "/app.js"
+                ).permitAll()
+                // Allow error page so 500s don't turn into confusing 403s
+                .requestMatchers("/error").permitAll()
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/moods/**").permitAll()
                 .requestMatchers("/api/products/trending").permitAll()
